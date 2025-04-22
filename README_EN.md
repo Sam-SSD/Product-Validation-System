@@ -85,7 +85,7 @@ Potential enhancements for future versions:
 2. Clone the repository from GitHub using the following command:
 
    ```bash
-   git clone https://github.com/Sam-SSD/Products-Validation-System.git
+   git clone https://github.com/Sam-SSD/Product-Validation-System.git
    ```
 
 3. Navigate to the project directory:
