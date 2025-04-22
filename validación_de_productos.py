@@ -1,10 +1,10 @@
 # Sistema de validación
 
 # Función para validar que el valor ingresado sea un número positivo
-def validar_numero_positivo(mensaje):
+def validar_numero_positivo(num):
     while True:
         try:
-            valor = float(input(mensaje))
+            valor = float(input(num))
             if valor < 0:
                 print("Por favor, ingrese un número positivo")
             else:
@@ -13,10 +13,10 @@ def validar_numero_positivo(mensaje):
             print("Entrada inválida. por favor, ingrese un número válido.")
 
 #Función para validar que el descuento esté entre 0 y 100
-def validar_descuento(mensaje):
+def validar_descuento(num):
     while True:
         try:
-            descuento = float(input(mensaje))
+            descuento = float(input(num))
             if 0 <= descuento <= 100:
                 return descuento
             else:
@@ -30,7 +30,7 @@ def validar_descuento(mensaje):
 print("----------Bienvenido al sistema de validación de productos----------")
 nombreProducto = input("Ingrese el nombre del producto: ")
 precioUnitario = validar_numero_positivo("Ingrese el precio unitario del producto: ")
-cantidad = validar_numero_positivo("Ingrese la cantidad de productos adquiridos: ")
+cantidad = validar_numero_positivo(f"Ingrese la cantidad de producto a comprar: ")
 descuento = validar_descuento("Ingrese el porcentaje de descuento (0-100): ")
 
 #Se calcúla el costo sin descuento
