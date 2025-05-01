@@ -6,13 +6,14 @@ def validar_numero_positivo(num):
         try:
             valor = float(input(num))
             if valor < 0:
-                print("Por favor, ingrese un número positivo")
+                print("Por favor, ingrese un número positivo.")
             else:
                 return valor
         except ValueError:
-            print("Entrada inválida. por favor, ingrese un número válido.")
+            print("Entrada inválida. Por favor, ingrese un número válido.")
 
-#Función para validar que el descuento esté entre 0 y 100
+
+# Función para validar que el descuento esté entre 0 y 100
 def validar_descuento(num):
     while True:
         try:
@@ -22,19 +23,24 @@ def validar_descuento(num):
             else:
                 print("El descuento debe estar entre 0 y 100.")
         except ValueError:
-            print("Entrada inválida. por favor, ingrese un número válido.")
+            print("Entrada inválida. Por favor, ingrese un número válido.")
 
-#Módulo principal para calcular el precio total
 
-#Datos de entrada
+# Módulo principal para calcular el precio total
 print("----------Bienvenido al sistema de validación de productos----------")
+
 nombreProducto = input("Ingrese el nombre del producto: ")
 precioUnitario = validar_numero_positivo("Ingrese el precio unitario del producto: ")
-cantidad = validar_numero_positivo(f"Ingrese la cantidad de producto a comprar: ")
-descuento = validar_descuento("Ingrese el porcentaje de descuento (0-100): ")
+cantidad = validar_numero_positivo("Ingrese la cantidad de producto a comprar: ")
 
-#Se calcúla el costo sin descuento
+# Preguntar si desea aplicar descuento
+respuesta = input("¿Desea aplicar un descuento? (sí/no): ").strip().lower()
+if respuesta in ["sí", "si", "s"]:
+    descuento = validar_descuento("Ingrese el porcentaje de descuento (0-100): ")
+else:
+    descuento = 0
 
+# Calcular el costo total
 costo_total = precioUnitario * cantidad
 
 # Aplicar descuento si corresponde
@@ -44,4 +50,3 @@ if descuento > 0:
 # Se muestra el resultado formateado
 print(f"\nEl costo total de la compra de {nombreProducto} es: ${costo_total:.2f}")
 print("--------------------------------------------------------------------")
-
